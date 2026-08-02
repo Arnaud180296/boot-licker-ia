@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Llm extends Model
 {
     //
-    public function conversation():HasMany{
+    public function conversations():HasMany{
         return $this->hasMany(Conversation::class);
     }
 }
