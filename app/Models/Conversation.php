@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Conversation extends Model
 {
     //
-    public function message():HasMany{
+    public function messages():HasMany{
         return $this->hasMany(Message::class);
     }
 

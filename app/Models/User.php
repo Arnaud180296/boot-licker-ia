@@ -50,12 +50,12 @@ class User extends Authenticatable implements PasskeyUser
         ];
     }
 
-    public function instruction():HasMany{
+    public function instructions():HasMany{
         //dans le cas ou l'utilisateur à la possibilite d'afficher toutes ses instructions.
         return $this->hasMany(Instruction::class)->chaperone(); 
     }
 
-    public function conversation(): HasMany{
+    public function conversations(): HasMany{
         //chaperone permet d'eviter des soucis de perf au niveau sql
         return $this->hasMany(Conversation::class)->chaperone();
     }
