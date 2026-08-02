@@ -7,12 +7,14 @@ use Database\Factories\UserFactory;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Laravel\Fortify\Contracts\PasskeyUser;
 use Laravel\Fortify\PasskeyAuthenticatable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
+
 
 /**
  * @property int $id
@@ -46,5 +48,15 @@ class User extends Authenticatable implements PasskeyUser
             'password' => 'hashed',
             'two_factor_confirmed_at' => 'datetime',
         ];
+    }
+
+    public function instruction():HasMany{
+        //dans le cas ou l'utilisateur à la possibilite d'afficher toutes ses instructions.
+        return $this->hasMany(Instruction::class)->chaperone(); 
+    }
+
+    public function conversation(): HasMany{
+        //chaperone permet d'eviter des soucis de perf au niveau sql
+        return $this->hasMany(Conversation::class)->chaperone();
     }
 }
