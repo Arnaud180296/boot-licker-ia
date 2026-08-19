@@ -4,7 +4,7 @@
 
 </script>
 <template>
-    <p>;;m;m</p>
+    <p>pas encore implemente</p>
 </template>
 <style scoped>
 </style>
