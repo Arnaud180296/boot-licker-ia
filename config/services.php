@@ -35,4 +35,10 @@ return [
         ],
     ],
 
+    
+    //config de la variable de mon API
+    'api_key_open_router' => [
+        'secret' => env('API_OPEN_ROUTER'),
+    ],
+
 ];
