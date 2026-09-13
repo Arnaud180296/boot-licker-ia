@@ -25,7 +25,13 @@ class ConversationService
         return $conversations;
     }
 
-    public function getConversationById($id_conversation){
+    public function getConversationById(int $idConversation, int $userId){
+        $conversation = Conversation::where(
+            [
+                "id" => $idConversation, 
+                "user_id" => $userId
+            ])->first();
         
+            return $conversation;
     }
 }
