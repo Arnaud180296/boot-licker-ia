@@ -1,11 +1,8 @@
 <script setup lang="ts">
 import { Head, Link } from '@inertiajs/vue3';
-import { ref } from 'vue';
 import { dashboard, login } from '@/routes';
 import { register } from '@/routes';
-import Arnaud from './Arnaud.vue';
-import Todolist from './practice/Todolist.vue';
-import Formulaire from '@/pages/practice/Formulaire.vue';
+
 
 
 
